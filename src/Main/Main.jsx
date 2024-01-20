@@ -1,3 +1,4 @@
+import AddDeleteTask from "../AddDeleteTask/AddDeleteTask";
 import s from "./Main.module.css";
 import React, { useState, useEffect } from "react";
 
@@ -22,7 +23,8 @@ const Main = () => {
   };
   // Функция удаления задачи
   const deleteTask = () => {
-    if (selectedTask !== null && !selectedTask.completed) {
+    if (selectedTask !== null) {
+      console.log(selectedTask);
       setTasks((prevTasks) =>
         prevTasks.filter((task) => task.text !== selectedTask.text)
       );
@@ -66,14 +68,7 @@ const Main = () => {
         className={s.input}
         placeholder="Введите новую задачу"
       />
-      <button className={`${s.button} ${s.addButton}`} onClick={addTask}>
-        Добавить задачу
-      </button>
-
-      <button className={`${s.button} ${s.deleteButton}`} onClick={deleteTask}>
-        Удалить задачу
-      </button>
-
+      <AddDeleteTask addTask={addTask} deleteTask={deleteTask} />
       <div className={s.copyright}>
         Developed by
         <a href="https://t.me/StormEV">STORM</a>
