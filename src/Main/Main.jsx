@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 const Main = () => {
   // Получение данных из localStorage при первой загрузке компонента
-  const dataTasks = JSON.parse(localStorage.getItem("tasks") || []);
+  const dataTasks = JSON.parse(localStorage.getItem("tasks")) || [];
   const [tasks, setTasks] = useState(dataTasks);
   const [newTaskUser, setNewTaskUser] = useState("");
   const [selectedTask, setSelectedTask] = useState([]);
