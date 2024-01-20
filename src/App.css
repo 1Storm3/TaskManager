@@ -1,0 +1,8 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612773988_56-p-temno-goluboi-fon-minimalizm-oboi-na-aifon-82.jpg);
+}
