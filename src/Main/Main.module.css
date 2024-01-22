@@ -16,6 +16,8 @@
   border-radius: 20px;
   padding: 40px 30px;
   gap: 25px;
+  max-width: 80vw;
+  width: 450px;
 }
 
 .input {
@@ -55,7 +57,7 @@ a {
 
 .checkbox {
   position: relative;
-  width: 20px;
+  min-width: 20px;
   height: 20px;
   cursor: pointer;
   margin-right: 8px;
@@ -137,8 +139,6 @@ a {
   width: 100%;
 }
 
-.input:valid + button[class="button"] {
-  background: #fff;
-  color: #000;
-  cursor: pointer;
+span {
+  word-break: break-all;
 }
