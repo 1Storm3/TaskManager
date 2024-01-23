@@ -78,9 +78,9 @@ a {
 }
 
 .checkbox:checked::before {
-  content: "\2713"; /* Юникод символ для галочки */
+  content: "\2713";
   text-align: center;
-  line-height: 20px; /* Высота чекбокса */
+  line-height: 20px;
   color: #ffffff;
   font-size: 20px;
 }
@@ -101,6 +101,18 @@ a {
   margin-left: 10px;
   cursor: pointer;
 }
+
+.allTasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+span {
+  word-break: break-all;
+}
+
 .buttonDelete {
   display: flex;
   padding: 5px 20px;
@@ -117,28 +129,19 @@ a {
 .buttonDelete:hover {
   background-color: #222;
 }
-.button {
-  padding: 8px 12px;
-  background-color: #ee0000;
+.buttonAdd {
+  columns: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  background: none;
   color: white;
-  border: none;
-  border-radius: 9px;
   cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: 10px;
-  width: 10vw;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
 }
-
-.allTasks {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-
-span {
-  word-break: break-all;
+.buttonAdd:hover {
+  background-color: #45a049;
 }

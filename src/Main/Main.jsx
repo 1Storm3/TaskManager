@@ -1,17 +1,19 @@
-import AddingTask from "../AddingTask/AddingTask";
 import s from "./Main.module.css";
 import React, { useState, useEffect } from "react";
+
 const Main = () => {
   // Получение данных из localStorage при первой загрузке компонента
   const dataTasks = JSON.parse(localStorage.getItem("tasks")) || [];
   const [tasks, setTasks] = useState(dataTasks);
   const [newTaskUser, setNewTaskUser] = useState("");
   const [selectedTask, setSelectedTask] = useState(null);
+
   // Сохранение данных в localStorage как только изменяется массив задач
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
+  // генерация id задачи
   const generateId = () => {
     return "_" + Math.random().toString(36).substring(2, 9);
   };
@@ -37,7 +39,7 @@ const Main = () => {
     setTasks([]);
     setSelectedTask(null);
   };
-
+  // Функция отслеживания отмеченных задач
   const toggleTask = (taskId) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
@@ -113,8 +115,11 @@ const Main = () => {
         className={s.input}
         placeholder="Введите новую задачу"
       />
-
-      <AddingTask addTask={addTask} />
+      <span>
+        <button className={s.buttonAdd} onClick={addTask}>
+          Добавить задачу
+        </button>
+      </span>
       <div className={s.copyright}>
         Developed by
         <a href="https://t.me/StormEV">STORM</a>
